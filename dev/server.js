@@ -21,6 +21,9 @@ server.listen(PORT).then(() => {
         client.on('message', (msg) => {
             console.log('server client got message', client.name, msg);
         });
+        client.on('disconnect', (reason) => {
+            console.log('server client disconnected', reason);
+        });
         server.broadcast('got new client!');
     });
 });
