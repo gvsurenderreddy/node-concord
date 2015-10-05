@@ -11,6 +11,9 @@ server.listen(PORT).then(() => {
         client.sendMessage('asd');
         client.on('message', (msg) => {
             console.log('actual client got', msg);
+            setTimeout(() => {
+               client.sendMessage('haha2');
+            }, 500);
         });
         client.on('disconnect', (reason) => {
             console.log('actual client disconnected:', reason);
@@ -20,6 +23,9 @@ server.listen(PORT).then(() => {
         console.log('server client connected', client.name);
         client.on('message', (msg) => {
             console.log('server client got message', client.name, msg);
+            setTimeout(() => {
+                client.sendMessage('haha1');
+            }, 500);
         });
         client.on('disconnect', (reason) => {
             console.log('server client disconnected', reason);
