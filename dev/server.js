@@ -8,7 +8,7 @@ server.listen(PORT).then(() => {
     var client = new concord.Client();
     client.connect(PORT).then(() => {
         console.log('actual client should be connected');
-        client.sendMessage('asd');
+        client.sendMessage('asd').catch(function(e) { console.log('caught', e);});
         client.on('message', (msg) => {
             console.log('actual client got', msg);
             setTimeout(() => {
