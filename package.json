@@ -1,6 +1,6 @@
 {
     "name": "concord",
-    "version": "0.1.0",
+    "version": "1.0.0-a",
     "description": "Virtual connection over UDP.",
     "main": "index.js",
     "repository": {
