@@ -15,10 +15,17 @@
         "datagram"
     ],
     "author": "Mihai Ene",
-    "license": "Apache 2.0",
+    "license": "Apache-2.0",
     "bugs": {
         "url": "https://github.com/randunel/node-concord/issues"
     },
-    "homepage": "https://github.com/randunel/node-concord#readme"
+    "homepage": "https://github.com/randunel/node-concord#readme",
+    "devDependencies": {
+        "mocha": "2.3.x",
+        "should": "7.1.x"
+    },
+    "scripts": {
+        "test": "./node_modules/.bin/mocha test"
+    }
 }
 
