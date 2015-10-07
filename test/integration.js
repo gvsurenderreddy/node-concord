@@ -33,6 +33,30 @@ describe('server', () => {
         });
         done();
     });
+
+    it('should support multiple client connections', (done) => {
+        getServerClient().then((members) => {
+            let server = members.server;
+            let todo = [];
+            for (let i = 0; i < 20; ++i) {
+                let client = new concord.Client();
+                todo.push(new Promise((resolve) => {
+                    return client.connect(PORT).then(resolve);
+                }));
+            }
+            Promise.all(todo).then(() => {
+                server.clients.size.should.equal(todo.length + 1);
+            });
+            let count = 0;
+            server.on('client connected', () => {
+                if (++count !== todo.length) {
+                    return;
+                }
+                server.clients.size.should.equal(todo.length + 1);
+                done();
+            });
+        });
+    });
 });
 
 describe('client', () => {
