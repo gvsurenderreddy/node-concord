@@ -1,31 +1,30 @@
 {
-    "name": "concord",
-    "version": "1.0.0-a",
-    "description": "Virtual connection over UDP.",
-    "main": "index.js",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/randunel/node-concord.git"
-    },
-    "keywords": [
-        "udp",
-        "connection",
-        "network",
-        "networking",
-        "datagram"
-    ],
-    "author": "Mihai Ene",
-    "license": "Apache-2.0",
-    "bugs": {
-        "url": "https://github.com/randunel/node-concord/issues"
-    },
-    "homepage": "https://github.com/randunel/node-concord#readme",
-    "devDependencies": {
-        "mocha": "2.3.x",
-        "should": "7.1.x"
-    },
-    "scripts": {
-        "test": "./node_modules/.bin/mocha test"
-    }
+  "name": "concord",
+  "version": "1.0.0",
+  "description": "Virtual connection over UDP.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/randunel/node-concord.git"
+  },
+  "keywords": [
+    "udp",
+    "connection",
+    "network",
+    "networking",
+    "datagram"
+  ],
+  "author": "Mihai Ene",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/randunel/node-concord/issues"
+  },
+  "homepage": "https://github.com/randunel/node-concord#readme",
+  "devDependencies": {
+    "mocha": "2.3.x",
+    "should": "7.1.x"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha test"
+  }
 }
-
