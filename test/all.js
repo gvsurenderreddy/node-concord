@@ -105,9 +105,10 @@ describe('server', () => {
         server.listen(PORT).then(() => {
             let client = new concord.Client();
             client.connect(PORT);
-            server.on('client connected', (cl) => {
-                should.exist(server.getClient(cl.name));
+            server.on('client connected', (c) => {
+                should.exist(server.getClient(c.name));
                 server.clients.size.should.equal(1);
+                server.getClient(c.name).port.should.equal(client.connection._socket.address().port);
                 done();
             });
         });
@@ -157,10 +158,11 @@ describe('client', () => {
         server.listen(PORT).then(() => {
             let client = new concord.Client();
             client.connect(PORT);
-            server.on('client connected', (cl) => {
+            server.on('client connected', (c) => {
                 should.exist(client.connection);
                 should.exist(client.disconnectTimeout);
-                should.exist(cl.disconnectTimeout);
+                should.exist(c.disconnectTimeout);
+                server.getClient(c.name).port.should.equal(client.connection._socket.address().port);
                 done();
             });
         });
