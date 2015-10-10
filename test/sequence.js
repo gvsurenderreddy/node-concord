@@ -4,7 +4,7 @@ var should = require('should');
 should = should || should;
 var Sequence = require('../lib/Sequence.js');
 
-describe.only('sequence', () => {
+describe('sequence', () => {
     it('should hold keys', (done) => {
         let seq = new Sequence(1);
         seq.set(1, '1');
